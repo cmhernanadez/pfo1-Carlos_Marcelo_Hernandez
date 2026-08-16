@@ -5,7 +5,7 @@ Este es mi portafolio personal, desarrollado como entrega para la PFO1 de la mat
 El objetivo de la landing page es presentar mi perfil como desarrollador en formación, mis habilidades técnicas, los cursos realizados y un medio de contacto.
 
 **URL del proyecto publicado: https://pfo1-carlos-marcelo-hernandez.vercel.app/
-**Perfil de GitHub: https://github.com/cmhernanadez
+**Perfil de GitHub: https://github.com/cmarceloh
 
 ## Decisiones de Diseño y Maquetación
 Para la construcción de esta landing page tomé las siguientes decisiones técnicas y visuales:
