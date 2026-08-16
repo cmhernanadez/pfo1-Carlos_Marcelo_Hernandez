@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Carlos Marcelo Hernandez</title>
+    <!-- Vinculación de Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">Mi Portafolio</div>
+
+      <!-- Hack de Menú Hamburguesa solo con CSS -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#cursos">Cursos y Certificados</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Sección de Presentación -->
+      <section id="sobre-mi" class="hero">
+        <div class="perfil">
+          <!-- Foto de perfil en la carpeta media -->
+          <img
+            src="media/image_02487e.png"
+            alt="Foto de perfil de Carlos Marcelo Hernandez"
+            class="foto-perfil"
+          />
+          <div class="datos">
+            <h1>Carlos Marcelo Hernandez</h1>
+            <h2>Desarrollador de Software en formación</h2>
+            <p>Estudiante en el IFTS 29. Me apasiona el desarrollo web y resolver problemas lógicos, el desarrollo de aplicaciones y la creación de videojuegos con Unity. Siempre buscando aprender nuevas tecnologías. Tambien soy fan del hardware y la electrónica, me gusta armar y desarmar computadoras y celulares.</p>
+            <a
+              href="https://github.com/cmhernanadez"
+              target="_blank"
+              class="btn-primario"
+              >Visitar mi perfil de GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Habilidades -->
+      <section id="habilidades" class="seccion bg-claro">
+        <h2>Mis Habilidades</h2>
+        <div class="grid-habilidades">
+          <div class="card">Desarrollo Web (HTML, CSS, JavaScript)</div>
+          <div class="card">Python, Kotlin, C#</div>
+          <div class="card">Desarrollo de Videojuegos (Unity 2D)</div>
+          <div class="card">Bases de Datos (SQLite, MySQL)</div>
+        </div>
+      </section>
+
+      <!-- Sección de Cursos -->
+      <section id="cursos" class="seccion">
+        <h2>Mis Cursos</h2>
+        <div class="flex-cursos">
+          <!-- Tarjeta de Curso 1 -->
+          <article class="curso-item">
+            <img
+              src="./media/python.png"
+              alt="Captura del certificado del curso de Python"
+              class="curso-img"
+            />
+            <h3>Python Inicial</h3>
+          </article>
+          </article>
+          <!-- Tarjeta de Curso 2 -->
+          <article class="curso-item">
+            <img
+              src="./media/python-santander.png"
+              alt="Captura del certificado de Python Santander"
+              class="curso-img"
+            />
+            <h3>Python Santander</h3>
+          </article>
+          <!-- Tarjeta de Curso 3 -->
+          <article class="curso-item">
+            <img
+              src="./media/mysql.png"
+              alt="Captura del certificado de mySQL"
+              class="curso-img"
+            />
+            <h3>Base de Datos SQL</h3>
+          </article>
+          <!-- Tarjeta de Curso 4 -->
+          <article class="curso-item">
+            <img
+              src="./media/unity.png"
+              alt="Captura del certificado de Unity 2D"
+              class="curso-img"
+            />
+            <h3>Desarrollo en Unity 2D</h3>
+          </article>
+          <!-- Tarjeta de Curso 5 -->
+          <article class="curso-item">
+            <img
+              src="./media/dw1.png"
+              alt="Captura del certificado de desarrollo web "
+              class="curso-img"
+            />
+            <h3>Desarrollo Web 1</h3>
+          </article>
+          <!-- Tarjeta de Curso 6 -->
+          <article class="curso-item">
+            <img
+              src="./media/dw-utn1.png"
+              alt="Captura del certificado de desarrollo web UTN"
+              class="curso-img"
+            />
+            <h3>Desarrollo Web UTN</h3>
+          </article
+           <!-- Tarjeta de Curso 7 -->
+          <article class="curso-item">
+            <img
+              src="./media/dw2.png"
+              alt="Captura del certificado de desarrollo web 2"
+              class="curso-img"
+            />
+            <h3>Desarrollo Web 2</h3>
+          </article>
+           <!-- Tarjeta de Curso 8 -->
+          <article class="curso-item">
+            <img
+              src="./media/kotlin.png"
+              alt="Captura del certificado de Kotlin"
+              class="curso-img"
+            />
+            <h3>Desarrollo en Kotlin</h3>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sección de Contacto con Formulario -->
+      <section id="contacto" class="seccion bg-claro">
+        <h2>Contacto</h2>
+        <form action="#" method="POST" class="formulario">
+          <div class="campo">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+          <div class="campo">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-primario">Enviar Mensaje</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; 2026 Carlos Marcelo Hernandez. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>

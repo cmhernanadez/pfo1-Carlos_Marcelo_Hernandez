@@ -1,0 +1,258 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Colores solicitados: Azul oscuro / Celeste */
+:root {
+  --azul-oscuro: #0b2b5e;
+  --celeste: #3a86ff;
+  --fondo-claro: #f4f7f6;
+  --blanco: #ffffff;
+}
+
+.bg-claro {
+  background-color: var(--fondo-claro);
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+.header {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Ocultar elementos del menú hamburguesa en PC */
+.menu-toggle,
+.menu-icon {
+  display: none;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease; /* TRANSICIÓN REQUERIDA */
+}
+
+.nav a:hover {
+  color: var(--celeste);
+}
+
+/* --- SECCIONES GENERALES --- */
+.seccion,
+.hero {
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+h2 {
+  color: var(--azul-oscuro);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* --- HERO / PERFIL (FLEXBOX) --- */
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.foto-perfil {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; /* Foto redonda y moderna */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.datos {
+  text-align: left;
+}
+
+.datos h1 {
+  font-size: 2.5rem;
+  color: var(--azul-oscuro);
+}
+
+.datos h2 {
+  font-size: 1.2rem;
+  color: var(--celeste);
+  margin-bottom: 1rem;
+}
+
+.btn-primario {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--celeste);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease; /* ANIMACIÓN REQUERIDA */
+}
+
+.btn-primario:hover {
+  background-color: var(--azul-oscuro);
+  transform: translateY(-3px);
+}
+
+/* --- HABILIDADES (GRID) --- */
+.grid-habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+/* --- CURSOS (FLEXBOX) --- */
+.flex-cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.curso-item {
+  background-color: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.curso-item:hover {
+  transform: scale(1.05); /* Efecto hover para las imágenes */
+}
+
+.curso-img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* --- FORMULARIO DE CONTACTO --- */
+.formulario {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background: var(--blanco);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.campo {
+  margin-bottom: 1.5rem;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 2rem;
+}
+
+/* --- RESPONSIVE DESIGN (MÓVILES) --- */
+@media (max-width: 768px) {
+  /* Activar icono de hamburguesa */
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* Ocultar el nav por defecto y acomodarlo como caja desplegable */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--azul-oscuro);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  /* Cuando el checkbox oculto está marcado, mostramos la navegación */
+  .menu-toggle:checked ~ .nav {
+    display: block;
+  }
+
+  /* Ajustar layout del perfil */
+  .perfil {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .datos {
+    text-align: center;
+  }
+}
