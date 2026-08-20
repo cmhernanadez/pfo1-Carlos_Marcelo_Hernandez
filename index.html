@@ -42,7 +42,13 @@
           <div class="datos">
             <h1>Carlos Marcelo Hernandez</h1>
             <h2>Desarrollador de Software en formación</h2>
-            <p>Estudiante en el IFTS 29. Me apasiona el desarrollo web y resolver problemas lógicos, el desarrollo de aplicaciones y la creación de videojuegos con Unity. Siempre buscando aprender nuevas tecnologías. Tambien soy fan del hardware y la electrónica, me gusta armar y desarmar computadoras y celulares.</p>
+            <p>
+              Estudiante en el IFTS 29. Me apasiona el desarrollo web y resolver
+              problemas lógicos, el desarrollo de aplicaciones y la creación de
+              videojuegos con Unity. Siempre buscando aprender nuevas
+              tecnologías. Tambien soy fan del hardware y la electrónica, me
+              gusta armar y desarmar computadoras y celulares.
+            </p>
             <a
               href="https://github.com/cmarceloh"
               target="_blank"
@@ -67,8 +73,30 @@
       <!-- Sección de Cursos -->
       <section id="cursos" class="seccion">
         <h2>Mis Cursos</h2>
-        <div class="flex-cursos">
-          <!-- Tarjeta de Curso 1 -->
+
+        <!-- Radio buttons ocultos para controlar la paginación (3 estados) -->
+        <input
+          type="radio"
+          name="cursos-estado"
+          id="estado-4"
+          class="ver-mas-toggle"
+          checked
+        />
+        <input
+          type="radio"
+          name="cursos-estado"
+          id="estado-8"
+          class="ver-mas-toggle"
+        />
+        <input
+          type="radio"
+          name="cursos-estado"
+          id="estado-todos"
+          class="ver-mas-toggle"
+        />
+
+        <!-- Grupo 1: Cursos 1-4 (siempre visibles) -->
+        <div class="cursos-grupo grupo-1">
           <article class="curso-item">
             <img
               src="./media/python.png"
@@ -77,8 +105,6 @@
             />
             <h3>Python Inicial</h3>
           </article>
-          </article>
-          <!-- Tarjeta de Curso 2 -->
           <article class="curso-item">
             <img
               src="./media/python-santander.png"
@@ -87,7 +113,6 @@
             />
             <h3>Python Santander</h3>
           </article>
-          <!-- Tarjeta de Curso 3 -->
           <article class="curso-item">
             <img
               src="./media/mysql.png"
@@ -96,7 +121,6 @@
             />
             <h3>Base de Datos SQL</h3>
           </article>
-          <!-- Tarjeta de Curso 4 -->
           <article class="curso-item">
             <img
               src="./media/unity.png"
@@ -105,16 +129,21 @@
             />
             <h3>Desarrollo en Unity 2D</h3>
           </article>
-          <!-- Tarjeta de Curso 5 -->
+        </div>
+
+        <!-- Botón "Ver más" → pasa de estado-4 a estado-8 -->
+        <label for="estado-8" class="btn-ver-mas btn-mostrar-1">Ver más</label>
+
+        <!-- Grupo 2: Cursos 5-8 -->
+        <div class="cursos-grupo grupo-2">
           <article class="curso-item">
             <img
               src="./media/dw1.png"
-              alt="Captura del certificado de desarrollo web "
+              alt="Captura del certificado de desarrollo web"
               class="curso-img"
             />
             <h3>Desarrollo Web 1</h3>
           </article>
-          <!-- Tarjeta de Curso 6 -->
           <article class="curso-item">
             <img
               src="./media/dw-utn1.png"
@@ -122,8 +151,7 @@
               class="curso-img"
             />
             <h3>Desarrollo Web UTN</h3>
-          </article
-           <!-- Tarjeta de Curso 7 -->
+          </article>
           <article class="curso-item">
             <img
               src="./media/dw2.png"
@@ -132,7 +160,6 @@
             />
             <h3>Desarrollo Web 2</h3>
           </article>
-           <!-- Tarjeta de Curso 8 -->
           <article class="curso-item">
             <img
               src="./media/kotlin.png"
@@ -142,6 +169,36 @@
             <h3>Desarrollo en Kotlin</h3>
           </article>
         </div>
+
+        <!-- Botón "Ver más" → pasa de estado-8 a estado-todos -->
+        <label for="estado-todos" class="btn-ver-mas btn-mostrar-2"
+          >Ver más</label
+        >
+
+        <!-- Grupo 3: Cursos 9-10 -->
+        <div class="cursos-grupo grupo-3">
+          <article class="curso-item">
+            <img
+              src="./media/Taller de GitHub.png"
+              alt="Captura del certificado de Taller de GitHub"
+              class="curso-img"
+            />
+            <h3>Taller de GitHub</h3>
+          </article>
+          <article class="curso-item">
+            <img
+              src="./media/python-daxus.png"
+              alt="Captura del certificado de Python Daxus"
+              class="curso-img"
+            />
+            <h3>Python Daxus</h3>
+          </article>
+        </div>
+
+        <!-- Botón "Ocultar cursos" → vuelve a estado-4 -->
+        <label for="estado-4" class="btn-ver-mas btn-ocultar"
+          >Ocultar cursos</label
+        >
       </section>
 
       <!-- Sección de Contacto con Formulario -->

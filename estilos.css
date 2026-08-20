@@ -149,14 +149,49 @@ h2 {
   color: var(--azul-oscuro);
 }
 
-/* --- CURSOS (FLEXBOX) --- */
-.flex-cursos {
+/* --- CURSOS: SISTEMA DE PAGINACIÓN SOLO CSS --- */
+
+/* Ocultar los checkboxes de control */
+.ver-mas-toggle {
+  display: none;
+}
+
+/* Contenedor de cada grupo de cursos */
+.cursos-grupo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
+/* Grupo 1: siempre visible */
+.grupo-1 {
+  max-height: 2000px;
+  opacity: 1;
+  transition:
+    max-height 0.6s ease,
+    opacity 0.4s ease,
+    margin 0.4s ease;
+  margin-bottom: 1.5rem;
+}
+
+/* Grupos 2 y 3: ocultos por defecto */
+.grupo-2,
+.grupo-3 {
+  max-height: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+  transition:
+    max-height 0.6s ease,
+    opacity 0.4s ease 0.1s,
+    margin 0.4s ease;
+}
+
+/* Estilo de las tarjetas de curso */
 .curso-item {
   background-color: var(--blanco);
   padding: 1.5rem;
@@ -167,7 +202,7 @@ h2 {
 }
 
 .curso-item:hover {
-  transform: scale(1.05); /* Efecto hover para las imágenes */
+  transform: scale(1.05);
 }
 
 .curso-img {
@@ -175,6 +210,107 @@ h2 {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+
+/* --- BOTONES VER MÁS / OCULTAR (elegantes) --- */
+.btn-ver-mas {
+  display: inline-block;
+  margin: 1.5rem auto;
+  padding: 0.85rem 2.5rem;
+  background: linear-gradient(135deg, var(--celeste), #1a6dff);
+  color: var(--blanco);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(58, 134, 255, 0.35);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.btn-ver-mas:hover {
+  background: linear-gradient(135deg, #1a6dff, var(--azul-oscuro));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(58, 134, 255, 0.5);
+}
+
+.btn-ver-mas:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(58, 134, 255, 0.3);
+}
+
+/* --- LÓGICA DE VISIBILIDAD (radio buttons) --- */
+
+/* Estado inicial (estado-4 checked): solo grupo 1 visible */
+/* Botón "Ver más" grupo 2: visible en estado-4 */
+.btn-mostrar-1 {
+  display: inline-block;
+}
+
+/* Botón "Ver más" grupo 3: oculto por defecto */
+.btn-mostrar-2 {
+  display: none;
+}
+
+/* Botón "Ocultar": oculto por defecto */
+.btn-ocultar {
+  display: none;
+  background: linear-gradient(135deg, #e74c6f, #c0392b);
+  box-shadow: 0 4px 15px rgba(231, 76, 111, 0.35);
+}
+
+.btn-ocultar:hover {
+  background: linear-gradient(135deg, #c0392b, #96281b);
+  box-shadow: 0 6px 20px rgba(231, 76, 111, 0.5);
+}
+
+/* === Estado: mostrar 8 cursos (estado-8 checked) === */
+
+/* Mostrar grupo 2 */
+#estado-8:checked ~ .grupo-2 {
+  max-height: 2000px;
+  opacity: 1;
+  margin-bottom: 1.5rem;
+  pointer-events: auto;
+}
+
+/* Ocultar botón "Ver más" del grupo 1, mostrar el del grupo 2 */
+#estado-8:checked ~ .btn-mostrar-1 {
+  display: none;
+}
+
+#estado-8:checked ~ .btn-mostrar-2 {
+  display: inline-block;
+}
+
+/* === Estado: mostrar todos (estado-todos checked) === */
+
+/* Mostrar grupos 2 y 3 */
+#estado-todos:checked ~ .grupo-2,
+#estado-todos:checked ~ .grupo-3 {
+  max-height: 2000px;
+  opacity: 1;
+  margin-bottom: 1.5rem;
+  pointer-events: auto;
+}
+
+/* Ocultar ambos botones "Ver más", mostrar "Ocultar" */
+#estado-todos:checked ~ .btn-mostrar-1 {
+  display: none;
+}
+
+#estado-todos:checked ~ .btn-mostrar-2 {
+  display: none;
+}
+
+#estado-todos:checked ~ .btn-ocultar {
+  display: inline-block;
+}
+
+/* Al seleccionar estado-4 de nuevo, todo vuelve al estado inicial automáticamente */
 
 /* --- FORMULARIO DE CONTACTO --- */
 .formulario {
